@@ -1,0 +1,20 @@
+[
+  {
+    "title": "some title",
+    "content": "some content",
+    "category": "tech",
+    "id": "1611923793850"
+  },
+  {
+    "title": "some title",
+    "content": "some content",
+    "category": "tech",
+    "id": "1611923796482"
+  },
+  {
+    "title": "some title",
+    "content": "some content",
+    "category": "political",
+    "id": "1611923855757"
+  }
+]
