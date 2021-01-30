@@ -42,11 +42,11 @@ textarea {
   outline: none;
 }
 /* .label {
-  position: absolute;
-  top: 13px;
-  left: 10px;
-  transition: 0.3s ease;
-} */
+    position: absolute;
+    top: 13px;
+    left: 10px;
+    transition: 0.3s ease;
+  } */
 #title {
   height: 45px;
   font-size: 22px;

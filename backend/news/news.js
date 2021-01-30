@@ -21,29 +21,32 @@ class News {
   }
 
   //create data
-  async create(data) {
-    const totalData = await this.getAll()
-    const id = this.createId()
+  async create(data, id, imageName) {
+    const totalData = JSON.parse(await fs.promises.readFile(this.path))
+    //const id = this.createId()
     //console.log(totalData)
-    totalData.push({ ...data, id })
+    const { content } = data
+    const desc = content.substr(0, 100) + '....'
+    totalData.push({ ...data, id, desc, thumbnail: `http://localhost:3001/${imageName}` })
     await fs.promises.writeFile(this.path, JSON.stringify(totalData, null, 2))
   }
 
   //get all data
   async getAll() {
-    return JSON.parse(await fs.promises.readFile(this.path))
+    const data = JSON.parse(await fs.promises.readFile(this.path))
+    return data.filter(news => delete news.content)
   }
 
   //get a single post
   async getSingle(id) {
-    const data = await this.getAll()
+    const data = JSON.parse(await fs.promises.readFile(this.path))
     return data.find(news => news.id === id)
   }
 
   //get by category
   async getByCategory(category) {
     const data = await this.getAll()
-    return data.find(news => news.category === category)
+    return data.filter(news => news.category === category)
   }
 }
 
