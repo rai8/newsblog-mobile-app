@@ -22,7 +22,7 @@ router.post('/create', uploads.single('thumbnail'), validator, result, validateF
 
 router.get('/news', getAllNews)
 router.get('/news/single/:id', getSingleNews)
-//router.get('/news/:category/:qty?', getNewsByCategory)
+router.get('/news/:category/:qty?', getNewsByCategory)
 router.get('/news/:category', getNewsByCategory)
 router.post('/news/search/:query', searchPosts)
 module.exports = router
